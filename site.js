@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const button = document.querySelector('[data-menu-button]');
   const menu = document.querySelector('[data-mobile-menu]');
   const header = document.querySelector('[data-header]');
@@ -32,8 +32,37 @@
     }
 
     const normalized = query.toLowerCase();
-    const academyTerms = ['training', 'course', 'certification', 'certify', 'exam', 'academy', 'learning', 'lab', 'comptia', 'cisco'];
-    const storeTerms = ['buy', 'price', 'pricing', 'license', 'licence', 'microsoft 365', 'software', 'hardware', 'product', 'store', 'subscription', 'dell'];
+
+    const academyTerms = [
+      'training',
+      'course',
+      'certification',
+      'certify',
+      'exam',
+      'academy',
+      'learning',
+      'lab',
+      'comptia',
+      'cisco',
+      'microsoft training'
+    ];
+
+    const storeTerms = [
+      'buy',
+      'shop',
+      'store',
+      'price',
+      'pricing',
+      'license',
+      'licence',
+      'microsoft 365',
+      'software',
+      'hardware',
+      'product',
+      'subscription',
+      'procurement',
+      'quote'
+    ];
 
     if (academyTerms.some((term) => normalized.includes(term))) {
       window.location.href = `https://www.skunkworksacademy.com/courses?q=${encodeURIComponent(query)}`;
@@ -41,13 +70,14 @@
     }
 
     if (storeTerms.some((term) => normalized.includes(term))) {
-      window.location.href = `https://store.skunkworks.africa/search?q=${encodeURIComponent(query)}`;
+      window.location.href = `https://store.skunkworksus.com/search?q=${encodeURIComponent(query)}`;
       return;
     }
 
-    const subject = `Skunkworks enquiry: ${query}`;
-    const body = `I need help with: ${query}\n\nPlease route this to the appropriate Skunkworks Africa capability.`;
-    window.location.href = `mailto:sales@skunkworks.africa?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const subject = `Skunkworks USA enquiry: ${query}`;
+    const body = `I need help with: ${query}\n\nPlease route this to the appropriate Skunkworks USA capability.`;
+
+    window.location.href = `mailto:sales@skunkworksus.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   button?.addEventListener('click', () => {
@@ -56,9 +86,11 @@
   });
 
   menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
   });
+
   desktop.addEventListener?.('change', (event) => {
     if (event.matches) closeMenu();
   });
