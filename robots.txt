@@ -1,0 +1,6 @@
+@'
+User-agent: *
+Allow: /
+
+Sitemap: https://skunkworksus.com/sitemap.xml
+'@ | Set-Content -Path .\robots.txt -Encoding UTF8
