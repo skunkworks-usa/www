@@ -1,6 +1,3 @@
-﻿@'
 User-agent: *
 Allow: /
-
-Sitemap: https://skunkworks-usa.github.io/www/sitemap.xml
-'@ | Set-Content -Path .\robots.txt -Encoding UTF8
+Sitemap: https://skunkworksus.com/sitemap.xml
